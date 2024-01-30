@@ -1,0 +1,6 @@
+#ignore all .json filw
+*.json
+*.backup
+*.tfstate
+*.hcl
+*.terraform

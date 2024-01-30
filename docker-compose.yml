@@ -1,0 +1,31 @@
+services:
+  pgdatabase:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=ny_taxi
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-networkk
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=khumisoletlhogileLEARNING@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8080:80"
+    networks:
+      - pg-networkk
+  taxi_ingest:
+    image: khumi
+    build:
+      context: . # Path to directory containing Dockerfile for pgadmin service
+      dockerfile: Dockerfile  # Name of Dockerfile for pgadmin service
+    networks:
+      - pg-networkk
+networks:
+  pg-networkk:
+    name: pg-networkk
