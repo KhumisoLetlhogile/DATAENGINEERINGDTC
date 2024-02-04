@@ -5,5 +5,5 @@
 *.hcl
 *.terraform
 #other
-*sf
-*variable.tf
+sf
+variable.tf
