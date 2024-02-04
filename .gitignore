@@ -4,3 +4,6 @@
 *.tfstate
 *.hcl
 *.terraform
+#other
+*.sf
+*.variable.tf
